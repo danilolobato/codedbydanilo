@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,55 +26,37 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Crear el cuerpo del email
-      const emailBody = `
-Nuevo mensaje desde tu página web:
+      // Configuración de EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        project_type: formData.project,
+        budget: formData.budget,
+        message: formData.message,
+        to_email: 'danilolobato02@gmail.com'
+      };
 
-Nombre: ${formData.name}
-Email: ${formData.email}
-Teléfono: ${formData.phone}
-Tipo de Proyecto: ${formData.project}
-Presupuesto: ${formData.budget}
+      // Enviar email usando EmailJS
+      await emailjs.send(
+        'service_portfolio', // Service ID
+        'template_contact', // Template ID
+        templateParams,
+        'YOUR_PUBLIC_KEY' // Public Key
+      );
 
-Mensaje:
-${formData.message}
-      `;
-
-      // Usar EmailJS o similar para enviar el email
-      const response = await fetch('https://formspree.io/f/xpwzgqpb', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          project: formData.project,
-          budget: formData.budget,
-          message: formData.message,
-          _replyto: formData.email,
-          _subject: `Nuevo proyecto de página web - ${formData.name}`,
-          _to: 'danilolobato02@gmail.com'
-        }),
+      setIsSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        project: '',
+        budget: '',
+        message: ''
       });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          project: '',
-          budget: '',
-          message: ''
-        });
-      } else {
-        throw new Error('Error al enviar el mensaje');
-      }
     } catch (error) {
-      console.error('Error:', error);
-      alert('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.');
+      console.error('Error al enviar email:', error);
+      alert('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctame directamente a danilolobato02@gmail.com');
     } finally {
       setIsSubmitting(false);
     }
