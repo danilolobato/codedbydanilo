@@ -5,39 +5,39 @@ const Services = () => {
   const services = [
     {
       icon: Globe,
-      title: 'Desarrollo Web Completo',
-      description: 'Sitios web personalizados desde cero, optimizados para rendimiento y SEO.',
+      title: 'Páginas Web Corporativas',
+      description: 'Sitios web profesionales para empresas, optimizados para conversión y SEO.',
       features: ['Diseño Responsivo', 'Optimización SEO', 'Velocidad Optimizada', 'Código Limpio']
     },
     {
       icon: Smartphone,
-      title: 'Aplicaciones Web',
-      description: 'Aplicaciones web modernas y funcionales con las últimas tecnologías.',
-      features: ['React/Vue.js', 'APIs REST', 'Base de Datos', 'Autenticación']
+      title: 'Páginas Web Responsivas',
+      description: 'Sitios web que se adaptan perfectamente a móviles, tablets y escritorio.',
+      features: ['Mobile First', 'Diseño Adaptativo', 'Touch Friendly', 'Cross Browser']
     },
     {
       icon: Palette,
-      title: 'Diseño UI/UX',
-      description: 'Interfaces atractivas y experiencias de usuario intuitivas.',
-      features: ['Prototipado', 'Wireframes', 'Diseño Visual', 'Testing de Usabilidad']
+      title: 'Diseño Web Personalizado',
+      description: 'Diseños únicos y atractivos que reflejan la identidad de tu marca.',
+      features: ['Diseño Original', 'Paleta de Colores', 'Tipografía', 'Elementos Visuales']
     },
     {
       icon: Zap,
-      title: 'Optimización Web',
-      description: 'Mejoro la velocidad y rendimiento de sitios web existentes.',
-      features: ['Análisis de Rendimiento', 'Optimización de Imágenes', 'Minificación', 'CDN Setup']
+      title: 'Páginas Web Rápidas',
+      description: 'Sitios web optimizados para carga rápida y mejor experiencia de usuario.',
+      features: ['Optimización de Imágenes', 'Código Minificado', 'CDN Setup', 'Performance']
     },
     {
       icon: Search,
-      title: 'SEO Técnico',
-      description: 'Optimización para motores de búsqueda y mejor visibilidad online.',
-      features: ['Meta Tags', 'Schema Markup', 'Sitemap XML', 'Analytics']
+      title: 'SEO Integrado',
+      description: 'Páginas web optimizadas para aparecer en los primeros resultados de Google.',
+      features: ['Meta Tags', 'Schema Markup', 'Sitemap XML', 'Google Analytics']
     },
     {
       icon: Code2,
       title: 'Mantenimiento Web',
-      description: 'Soporte continuo, actualizaciones y mantenimiento de sitios web.',
-      features: ['Actualizaciones', 'Backups', 'Monitoreo', 'Soporte 24/7']
+      description: 'Soporte continuo, actualizaciones y mantenimiento de tu página web.',
+      features: ['Actualizaciones', 'Backups', 'Monitoreo', 'Soporte Técnico']
     }
   ];
 
@@ -46,11 +46,11 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Mis Servicios
+            Servicios de Páginas Web
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ofrezco soluciones web completas adaptadas a las necesidades específicas de cada cliente.
+            Creo páginas web profesionales y personalizadas que ayudan a tu negocio a destacar online.
           </p>
         </div>
 
@@ -88,10 +88,10 @@ const Services = () => {
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              ¿Listo para empezar tu proyecto?
+              ¿Listo para tener tu página web?
             </h3>
             <p className="text-xl mb-8 opacity-90">
-              Conversemos sobre cómo puedo ayudarte a alcanzar tus objetivos digitales.
+              Conversemos sobre cómo puedo crear la página web perfecta para tu negocio.
             </p>
             <button 
               onClick={() => {

@@ -17,9 +17,9 @@ const Footer = () => {
               <span className="text-xl font-bold">Danilo Lobato</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Desarrollador web freelancer especializado en crear experiencias 
-              digitales excepcionales. Transformo ideas en realidad con código 
-              limpio y diseño moderno.
+              Desarrollador web freelancer especializado en crear páginas web 
+              excepcionales. Transformo ideas en sitios web funcionales con 
+              diseño moderno y código limpio.
             </p>
           </div>
 
@@ -47,9 +47,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Servicios</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>Desarrollo Web Completo</li>
-              <li>Aplicaciones Web</li>
-              <li>Diseño UI/UX</li>
+              <li>Páginas Web Corporativas</li>
+              <li>Páginas Web Responsivas</li>
+              <li>Diseño Web Personalizado</li>
               <li>Optimización SEO</li>
               <li>Mantenimiento Web</li>
             </ul>

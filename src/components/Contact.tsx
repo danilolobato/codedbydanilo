@@ -24,20 +24,59 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        project: '',
-        budget: '',
-        message: ''
+    try {
+      // Crear el cuerpo del email
+      const emailBody = `
+Nuevo mensaje desde tu página web:
+
+Nombre: ${formData.name}
+Email: ${formData.email}
+Teléfono: ${formData.phone}
+Tipo de Proyecto: ${formData.project}
+Presupuesto: ${formData.budget}
+
+Mensaje:
+${formData.message}
+      `;
+
+      // Usar EmailJS o similar para enviar el email
+      const response = await fetch('https://formspree.io/f/xpwzgqpb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          project: formData.project,
+          budget: formData.budget,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `Nuevo proyecto de página web - ${formData.name}`,
+          _to: 'danilolobato02@gmail.com'
+        }),
       });
-    }, 2000);
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          project: '',
+          budget: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Error al enviar el mensaje');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -50,7 +89,7 @@ const Contact = () => {
               ¡Mensaje Enviado!
             </h3>
             <p className="text-xl text-gray-600 mb-8">
-              Gracias por contactarme. Te responderé lo antes posible.
+              Gracias por contactarme. Te responderé lo antes posible para discutir tu proyecto de página web.
             </p>
             <button 
               onClick={() => setIsSubmitted(false)}
@@ -73,7 +112,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            ¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y ayudarte a hacerlas realidad.
+            ¿Necesitas una página web? Me encantaría escuchar tu proyecto y ayudarte a crear la página web perfecta.
           </p>
         </div>
 
@@ -92,7 +131,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Email</p>
-                    <p className="text-gray-600">danilolobato@gmail.com</p>
+                    <p className="text-gray-600">danilolobato02@gmail.com</p>
                   </div>
                 </div>
                 
@@ -120,12 +159,12 @@ const Contact = () => {
 
             <div className="bg-gradient-to-br from-blue-600 to-green-600 rounded-2xl p-8 text-white">
               <h3 className="text-xl font-bold mb-4">
-                ¿Por qué trabajar conmigo?
+                ¿Por qué elegir mis servicios?
               </h3>
               <ul className="space-y-3">
                 <li className="flex items-center">
                   <CheckCircle className="h-5 w-5 mr-3 opacity-80" />
-                  Comunicación directa y personalizada
+                  Páginas web personalizadas y únicas
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-5 w-5 mr-3 opacity-80" />
@@ -192,13 +231,13 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+57 300 123 4567"
                   />
                 </div>
                 
                 <div>
                   <label htmlFor="project" className="block text-sm font-medium text-gray-700 mb-2">
-                    Tipo de Proyecto *
+                    Tipo de Página Web *
                   </label>
                   <select
                     id="project"
@@ -209,19 +248,20 @@ const Contact = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   >
                     <option value="">Selecciona una opción</option>
-                    <option value="website">Sitio Web Corporativo</option>
+                    <option value="corporativa">Página Web Corporativa</option>
                     <option value="ecommerce">Tienda Online</option>
-                    <option value="webapp">Aplicación Web</option>
-                    <option value="redesign">Rediseño de Sitio</option>
-                    <option value="maintenance">Mantenimiento</option>
-                    <option value="other">Otro</option>
+                    <option value="portfolio">Página Web Portfolio</option>
+                    <option value="restaurante">Página Web Restaurante</option>
+                    <option value="servicios">Página Web de Servicios</option>
+                    <option value="personal">Página Web Personal</option>
+                    <option value="other">Otro tipo</option>
                   </select>
                 </div>
               </div>
 
               <div>
                 <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
-                  Presupuesto Estimado
+                  Presupuesto Estimado (COP)
                 </label>
                 <select
                   id="budget"
@@ -231,11 +271,11 @@ const Contact = () => {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                 >
                   <option value="">Selecciona un rango</option>
-                  <option value="under-1000">Menos de $1,000</option>
-                  <option value="1000-3000">$1,000 - $3,000</option>
-                  <option value="3000-5000">$3,000 - $5,000</option>
-                  <option value="5000-10000">$5,000 - $10,000</option>
-                  <option value="over-10000">Más de $10,000</option>
+                  <option value="150k-200k">$150,000 - $200,000</option>
+                  <option value="200k-250k">$200,000 - $250,000</option>
+                  <option value="250k-300k">$250,000 - $300,000</option>
+                  <option value="300k-400k">$300,000 - $400,000</option>
+                  <option value="400k+">Más de $400,000</option>
                 </select>
               </div>
 
@@ -251,7 +291,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
-                  placeholder="Cuéntame sobre tu proyecto, objetivos, y cualquier detalle específico que consideres importante..."
+                  placeholder="Cuéntame sobre tu proyecto de página web, qué tipo de negocio tienes, qué funcionalidades necesitas, y cualquier detalle específico que consideres importante..."
                 ></textarea>
               </div>
 

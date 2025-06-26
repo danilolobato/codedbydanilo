@@ -4,46 +4,46 @@ import { ExternalLink, Github, Globe } from 'lucide-react';
 const Portfolio = () => {
   const projects = [
     {
-      title: 'E-commerce Moderno',
-      description: 'Tienda online completa con carrito de compras, pagos integrados y panel administrativo.',
+      title: 'Página Web E-commerce',
+      description: 'Tienda online moderna con catálogo de productos, carrito de compras y diseño atractivo.',
       image: 'https://images.pexels.com/photos/3584994/pexels-photo-3584994.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
       category: 'E-commerce'
     },
     {
-      title: 'Dashboard Corporativo',
-      description: 'Panel de control para gestión empresarial con analytics en tiempo real y reportes.',
+      title: 'Página Web Corporativa',
+      description: 'Sitio web profesional para empresa con secciones informativas y formulario de contacto.',
       image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Vue.js', 'TypeScript', 'D3.js', 'PostgreSQL'],
-      category: 'Web App'
+      technologies: ['React', 'Tailwind CSS', 'JavaScript'],
+      category: 'Corporativa'
     },
     {
-      title: 'Sitio Web Restaurante',
-      description: 'Página web elegante para restaurante con menú digital y sistema de reservas.',
+      title: 'Página Web Restaurante',
+      description: 'Sitio web elegante para restaurante con menú digital y información de contacto.',
       image: 'https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP'],
-      category: 'Website'
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'WordPress'],
+      category: 'Restaurante'
     },
     {
-      title: 'Portfolio Creativo',
-      description: 'Sitio web portfolio para artista con galería interactiva y animaciones avanzadas.',
+      title: 'Página Web Portfolio',
+      description: 'Sitio web portfolio para profesional creativo con galería de trabajos.',
       image: 'https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'Framer Motion', 'Tailwind CSS'],
+      technologies: ['React', 'CSS3', 'JavaScript'],
       category: 'Portfolio'
     },
     {
-      title: 'App de Fitness',
-      description: 'Aplicación web para seguimiento de ejercicios con planes personalizados.',
+      title: 'Página Web Servicios',
+      description: 'Sitio web para empresa de servicios con información detallada y formularios.',
       image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React Native', 'Firebase', 'Redux'],
-      category: 'Mobile App'
+      technologies: ['HTML5', 'Bootstrap', 'JavaScript'],
+      category: 'Servicios'
     },
     {
-      title: 'Plataforma Educativa',
-      description: 'Sistema de aprendizaje online con cursos, exámenes y seguimiento de progreso.',
+      title: 'Página Web Educativa',
+      description: 'Sitio web para institución educativa con información de cursos y contacto.',
       image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Next.js', 'Prisma', 'TailwindCSS'],
-      category: 'Education'
+      technologies: ['WordPress', 'CSS3', 'JavaScript'],
+      category: 'Educativa'
     }
   ];
 
@@ -52,11 +52,11 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Mi Portafolio
+            Páginas Web Creadas
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Algunos ejemplos de proyectos que he desarrollado para clientes satisfechos.
+            Algunos ejemplos de páginas web que he desarrollado para clientes satisfechos.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ const Portfolio = () => {
                       <ExternalLink className="h-4 w-4" />
                     </button>
                     <button className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors">
-                      <Github className="h-4 w-4" />
+                      <Globe className="h-4 w-4" />
                     </button>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ const Portfolio = () => {
 
         <div className="mt-16 text-center">
           <p className="text-gray-600 mb-6">
-            ¿Te gusta lo que ves? Estos son solo algunos ejemplos de mi trabajo.
+            ¿Te gusta lo que ves? Estos son solo algunos ejemplos de páginas web que he creado.
           </p>
           <button 
             onClick={() => {
@@ -124,7 +124,7 @@ const Portfolio = () => {
             }}
             className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-green-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
           >
-            Hablemos de tu Proyecto
+            Crear Mi Página Web
           </button>
         </div>
       </div>

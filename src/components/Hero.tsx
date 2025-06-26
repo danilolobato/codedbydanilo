@@ -35,12 +35,12 @@ const Hero = () => {
           </h1>
           
           <h2 className="text-2xl md:text-3xl text-gray-600 mb-8 font-light">
-            Desarrollador Web Freelancer
+            Creador de Páginas Web
           </h2>
           
           <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Creo experiencias web únicas y funcionales. Desde sitios corporativos hasta aplicaciones complejas, 
-            transformo ideas en realidad digital con código limpio y diseño moderno.
+            Creo páginas web únicas y funcionales desde cero. Desde sitios corporativos hasta tiendas online, 
+            transformo tu idea en una página web profesional con diseño moderno y código limpio.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -48,14 +48,14 @@ const Hero = () => {
               onClick={() => scrollToSection('portafolio')}
               className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
             >
-              Ver Mi Trabajo
+              Ver Páginas Web
             </button>
             
             <button
               onClick={() => scrollToSection('contacto')}
               className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold text-lg hover:border-blue-600 hover:text-blue-600 transform hover:scale-105 transition-all duration-300"
             >
-              Contáctame
+              Crear Mi Página Web
             </button>
           </div>
         </div>

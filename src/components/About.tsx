@@ -3,7 +3,7 @@ import { User, Award, Coffee, Heart } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { icon: Award, label: 'Proyectos Completados', value: '50+' },
+    { icon: Award, label: 'Páginas Web Creadas', value: '50+' },
     { icon: Coffee, label: 'Cafés Consumidos', value: '1000+' },
     { icon: Heart, label: 'Clientes Satisfechos', value: '40+' },
     { icon: User, label: 'Años de Experiencia', value: '3+' }
@@ -26,21 +26,21 @@ const About = () => {
                 Mi Historia
               </h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Soy Danilo Lobato, un desarrollador web freelancer apasionado por crear 
-                experiencias digitales excepcionales. Mi viaje en el desarrollo web comenzó 
-                hace varios años, y desde entonces he tenido el privilegio de trabajar con 
-                clientes de diversos sectores.
+                Soy Danilo Lobato, un desarrollador web freelancer especializado en crear 
+                páginas web excepcionales desde cero. Mi pasión es transformar ideas en 
+                sitios web funcionales, atractivos y optimizados que ayuden a mis clientes 
+                a destacar en el mundo digital.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Mi enfoque se centra en entender las necesidades únicas de cada cliente 
-                y traducirlas en soluciones web funcionales, atractivas y optimizadas. 
+                Mi enfoque se centra en entender las necesidades específicas de cada cliente 
+                y crear páginas web personalizadas que reflejen su identidad y objetivos. 
                 Trabajo de manera independiente, lo que me permite ofrecer atención 
                 personalizada y flexibilidad en cada proyecto.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Cuando no estoy programando, disfruto aprendiendo nuevas tecnologías, 
-                explorando tendencias de diseño y perfeccionando mis habilidades para 
-                ofrecer siempre lo mejor a mis clientes.
+                Cada página web que desarrollo está optimizada para velocidad, SEO y 
+                experiencia de usuario, asegurando que mis clientes obtengan resultados 
+                reales y una presencia web profesional.
               </p>
             </div>
           </div>
@@ -68,12 +68,12 @@ const About = () => {
         {/* Skills */}
         <div className="mt-20">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Tecnologías que Domino
+            Tecnologías que Uso para Crear Páginas Web
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {[
               'HTML5', 'CSS3', 'JavaScript', 'React', 'Node.js', 'TypeScript',
-              'Tailwind CSS', 'MongoDB', 'PostgreSQL', 'Git', 'Figma', 'WordPress'
+              'Tailwind CSS', 'Git', 'Figma', 'WordPress', 'Bootstrap', 'Sass'
             ].map((skill, index) => (
               <div 
                 key={index}
